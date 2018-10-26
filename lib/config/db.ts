@@ -12,7 +12,7 @@ function bootstrapDatabase() {
       process.env.MONGO_DB
     }`,
     { useNewUrlParser: true },
-    (err) => {
+    (err: any) => {
       if (err) {
         console.error(
           'Could NOT connect to mongoDB. Check your environment variables for possible errors.'
@@ -24,6 +24,8 @@ function bootstrapDatabase() {
     }
   );
 }
+
+require('../models/User');
 
 export default bootstrapDatabase;
 export { mongoose };

@@ -1,18 +1,16 @@
 import * as express from 'express';
 import * as dotenv from 'dotenv';
-import * as cors from 'cors';
-import * as helmet from 'helmet';
 import * as bodyParser from 'body-parser';
-import * as morgan from 'morgan';
 // import bootstrapDatabase from './config/db';
-import handleCors from './config/cors';
 import { ApolloServer } from 'apollo-server-express';
 import schema from './schema/index';
+import slack from './routes/slack';
+import bootstrapDatabase from './config/db';
 
 dotenv.config();
 
 // Bootstrap mongoDB
-// bootstrapDatabase();
+bootstrapDatabase();
 
 const server = new ApolloServer({
   schema,
@@ -25,7 +23,6 @@ const server = new ApolloServer({
 const app = express();
 const env = process.env.NODE_ENV || 'development';
 const port =
-  process.env.DEV_PORT ||
   process.env.PORT ||
   (process && typeof process.getuid === 'function' && process.getuid()) ||
   1337;
@@ -38,11 +35,7 @@ app.get('/', function(req: any, res: any) {
   res.send('QuizMaster 1337 on duty!');
 });
 
-app.post('/slack', function(req: any, res: any) {
-  console.log('Body', req.body);
-  console.log('Query', req.query);
-  res.send(req.body.challenge);
-});
+app.use('/slack', slack);
 
 app.listen(port, () => {
   console.log(`App is running in ${env}-mode`);

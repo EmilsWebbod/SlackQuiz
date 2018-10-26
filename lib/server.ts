@@ -4,39 +4,33 @@ import * as cors from 'cors';
 import * as helmet from 'helmet';
 import * as bodyParser from 'body-parser';
 import * as morgan from 'morgan';
-import bootstrapDatabase from './config/db';
+// import bootstrapDatabase from './config/db';
 import handleCors from './config/cors';
-
-const pkg = require(__dirname + '/../package.json');
+import { ApolloServer } from 'apollo-server-express';
+import schema from './schema/index';
 
 dotenv.config();
 
 // Bootstrap mongoDB
-bootstrapDatabase();
+// bootstrapDatabase();
 
-const app = express();
-const port = process.env.PORT || 1337;
-const env = process.env.NODE_ENV || 'development';
-const corsWhitelist = process.env.ALLOWED_URLS;
-
-app.use(helmet());
-app.use(cors(handleCors(corsWhitelist)));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-if (env === 'development') {
-  app.use(morgan('combined'));
-}
-
-app.get('/', (_: express.Request, res: express.Response) => {
-  return res.json({
-    message: 'Welcome to the courses API',
-    version: pkg.version
-  });
+const server = new ApolloServer({
+  schema,
+  context: (req: Request, res: Response) => ({
+    req,
+    res
+  })
 });
 
-app.listen(port, () => {
-  console.log(`App is running at http://localhost:${port} in ${env}-mode`);
+const app = express();
+const env = process.env.NODE_ENV || 'development';
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+server.applyMiddleware({ app, path: '/graphql' });
+
+app.listen(3000, () => {
+  console.log(`App is running in ${env}-mode`);
   console.log('Press CTRL-C to stop\n');
 });
 

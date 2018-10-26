@@ -27,12 +27,13 @@ const QuizTypes = gql`
   }
 
   input QuizArgs {
+    amount: Int
     category: Int
   }
 
   type Query {
     quizStart(query: QuizArgs): QuizObject
-    quiz(answer: String!): QuizAnswer
+    quiz(handle: String!, answer: String!): QuizAnswer
     quizEnd: QuizResult
   }
 `;

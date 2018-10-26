@@ -1,5 +1,6 @@
 import * as fetch from 'isomorphic-fetch';
 import * as qs from 'qs';
+import Quiz from '../utils/Quiz';
 
 let quiz: Quiz;
 
@@ -32,18 +33,17 @@ const resolvers = {
 
       return quiz.startQuiz();
     },
-    quiz: (_: object, args: { answer: string }) => {
+    quiz: (
+      _: object,
+      { handle, answer }: { handle: string; answer: string }
+    ) => {
       if (!quiz) throw 'Quiz not started. Run "quizStart"';
-      if (quiz.answer(args.answer)) {
+      if (quiz.ended) {
         return {
-          message: 'Correct',
-          question: quiz.getQuestion()
-        };
-      } else {
-        return {
-          message: 'Fail'
+          message: 'Quiz Ended'
         };
       }
+      return quiz.answer(handle, answer);
     },
     quizEnd: () => {
       if (!quiz) throw 'Quiz not started. Run "quizStart"';
@@ -51,37 +51,5 @@ const resolvers = {
     }
   }
 };
-
-class Quiz {
-  private _index = 0;
-  private _ended = false;
-
-  constructor(private _questions: any[]) {}
-
-  public startQuiz() {
-    return {
-      questionQuery: 'query {quiz {question}}',
-      endQuery: 'query {quizEnd{result}}',
-      question: this.getQuestion()
-    };
-  }
-
-  public getQuestion() {
-    if (this._index > this._questions.length) {
-      return null;
-    }
-    return this._questions[this._index++];
-  }
-
-  public answer(answer: string) {
-    return this._questions[this._index - 1].correct_answer === answer;
-  }
-
-  public endQuiz() {
-    return {
-      result: 'Question answered: ' + this._questions.length
-    };
-  }
-}
 
 export default resolvers;

@@ -1,6 +1,12 @@
-import mockData from '../config/mockData';
 import * as fetch from 'isomorphic-fetch';
 import * as qs from 'qs';
+
+let quiz: Quiz;
+
+interface IQuiz {
+  name: string;
+  questions: any[];
+}
 
 interface IQuiz {
   query: {
@@ -13,7 +19,8 @@ interface IQuiz {
 
 const resolvers = {
   Query: {
-    quiz: async (_: any, args: IQuiz) => {
+    quizStart: async (_: any, args: IQuiz) => {
+      if (!args.query) args.query = {};
       if (!args.query.amount) args.query.amount = 10;
 
       const queries = qs.stringify(args.query);
@@ -21,12 +28,60 @@ const resolvers = {
       const quizResponse = await fetch(url);
       const json = await quizResponse.json();
 
-      const randomQuiz =
-        json.results[Math.floor(Math.random()) * json.results.length];
+      quiz = new Quiz(json.results);
 
-      return randomQuiz;
+      return quiz.startQuiz();
+    },
+    quiz: (_: object, args: { answer: string }) => {
+      if (!quiz) throw 'Quiz not started. Run "quizStart"';
+      if (quiz.answer(args.answer)) {
+        return {
+          message: 'Correct',
+          question: quiz.getQuestion()
+        };
+      } else {
+        return {
+          message: 'Fail'
+        };
+      }
+    },
+    quizEnd: () => {
+      if (!quiz) throw 'Quiz not started. Run "quizStart"';
+      return quiz.endQuiz();
     }
   }
 };
+
+class Quiz {
+  private _index = 0;
+  private _ended = false;
+
+  constructor(private _questions: any[]) {}
+
+  public startQuiz() {
+    return {
+      questionQuery: 'query {quiz {question}}',
+      endQuery: 'query {quizEnd{result}}',
+      question: this.getQuestion()
+    };
+  }
+
+  public getQuestion() {
+    if (this._index > this._questions.length) {
+      return null;
+    }
+    return this._questions[this._index++];
+  }
+
+  public answer(answer: string) {
+    return this._questions[this._index - 1].correct_answer === answer;
+  }
+
+  public endQuiz() {
+    return {
+      result: 'Question answered: ' + this._questions.length
+    };
+  }
+}
 
 export default resolvers;

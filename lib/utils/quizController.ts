@@ -49,3 +49,8 @@ export function quizEnd() {
   if (!quiz) throw 'Quiz not started. Run "quizStart"';
   return quiz.endQuiz();
 }
+
+export function slack(_: any, args: any) {
+  console.log('Slack args', args);
+  return JSON.stringify(args);
+}

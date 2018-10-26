@@ -25,11 +25,24 @@ const server = new ApolloServer({
 const app = express();
 const env = process.env.NODE_ENV || 'development';
 const port =
-  process.env.DEV_PORT || process.env.PORT || process.getuid() || 1337;
+  process.env.DEV_PORT ||
+  process.env.PORT ||
+  (process && typeof process.getuid === 'function' && process.getuid()) ||
+  1337;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 server.applyMiddleware({ app, path: '/graphql' });
+
+app.get('/', function(req: any, res: any) {
+  res.send('QuizMaster 1337 on duty!');
+});
+
+app.post('/slack', function(req: any, res: any) {
+  console.log('Body', req.body);
+  console.log('Query', req.query);
+  res.send(req.body.challenge);
+});
 
 app.listen(port, () => {
   console.log(`App is running in ${env}-mode`);

@@ -35,6 +35,7 @@ const QuizTypes = gql`
     quizStart(query: QuizArgs): QuizObject
     quiz(handle: String!, answer: String!): QuizAnswer
     quizEnd: QuizResult
+    slack: String
   }
 `;
 

@@ -1,4 +1,5 @@
 export interface ISlackHandShake {
+  type: 'url_verification';
   token: string;
   challenge: string;
 }
@@ -9,6 +10,7 @@ export interface ISlack {
   api_app_id: string;
   event: {
     type: string;
+    subtype?: string;
     user: string;
     text: string;
     client_msg_id: string;

@@ -1,6 +1,8 @@
 import * as mongoose from 'mongoose';
+import * as dotenv from 'dotenv';
 
 (mongoose as any).Promise = global.Promise;
+dotenv.config();
 
 function bootstrapDatabase() {
   const userAttached = process.env.MONGO_USER

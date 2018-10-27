@@ -1,13 +1,10 @@
 import * as express from 'express';
-import * as dotenv from 'dotenv';
 import * as bodyParser from 'body-parser';
 // import bootstrapDatabase from './config/db';
 import { ApolloServer } from 'apollo-server-express';
 import schema from './schema/index';
-import slack from './routes/slack';
 import bootstrapDatabase from './config/db';
-
-dotenv.config();
+import slack from './routes/slack';
 
 // Bootstrap mongoDB
 bootstrapDatabase();

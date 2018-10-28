@@ -1,9 +1,9 @@
-import { getRandomMessageFrom } from '../utils/getMessage';
-import { IRequest } from '../../../interfaces/express';
-import { IVoiceMesage } from '../../../interfaces/voice';
+import { getRandomMessageFrom } from '../../utils/getMessage';
+import { IRequest } from '../../../../interfaces/express';
+import { IVoiceMessage } from '../../../../interfaces/voice';
 
 export interface IUserMessages {
-  userAdded: IVoiceMesage;
+  userAdded: IVoiceMessage;
 }
 
 const userMessages: IUserMessages = {

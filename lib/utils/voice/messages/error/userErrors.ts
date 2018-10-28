@@ -1,10 +1,10 @@
-import { getRandomMessageFrom } from '../utils/getMessage';
-import { IVoiceMesage } from '../../../interfaces/voice';
+import { getRandomMessageFrom } from '../../utils/getMessage';
+import { IVoiceMessage } from '../../../../interfaces/voice';
 
 export interface IUserErrors {
-  userAlreadyExist: IVoiceMesage;
-  unregisteredUser: IVoiceMesage;
-  userNameToShort: IVoiceMesage;
+  userAlreadyExist: IVoiceMessage;
+  unregisteredUser: IVoiceMessage;
+  userNameToShort: IVoiceMessage;
 }
 
 const userErrors: IUserErrors = {

@@ -1,31 +1,36 @@
+export interface IQuizQuestion {
+  question: string;
+  correct_answer: string;
+  answers: string;
+}
+
 export default class Quiz {
   private _index = 0;
+  public started = false;
   public ended = false;
 
   private answers: Array<{ handle: string; correct: number }> = [];
 
-  constructor(private _questions: any[]) {}
+  constructor(private _questions: IQuizQuestion[]) {}
 
   public startQuiz() {
-    return {
-      questionQuery: 'query {quiz {question}}',
-      endQuery: 'query {quizEnd{result}}',
-      question: this.getQuestion()
-    };
+    this.started = true;
   }
 
   public getQuestion() {
     if (this.ended || this._index > this._questions.length) {
       return null;
     }
-    return this._questions[this._index++];
+    console.log('Answer', this._questions[this._index].correct_answer);
+    return this._questions[this._index].question;
   }
 
   public answer(handle: string, answer: string) {
-    if (this._questions.length === this._index) {
+    if (this.ended || this._questions.length === this._index) {
       this.ended = true;
+      return;
     }
-    const correct = this._questions[this._index - 1].correct_answer === answer;
+    const correct = this._questions[this._index].correct_answer.match(answer);
     if (correct) {
       const index = this.answers.findIndex((x) => x.handle === handle);
       if (index > -1) {
@@ -33,17 +38,19 @@ export default class Quiz {
       } else {
         this.answers.push({ handle, correct: 1 });
       }
-      return {
-        message: 'Correct',
-        question: this.getQuestion()
-      };
+
+      ++this._index;
+      return true;
     }
-    return {
-      message: 'Fail'
-    };
+    return false;
+  }
+
+  public isEndOfQuiz() {
+    return this._questions.length === this._index;
   }
 
   public endQuiz() {
+    this.started = false;
     return this.getHighscore();
   }
 
@@ -56,14 +63,12 @@ export default class Quiz {
       }
       return 0;
     });
-    return {
-      result: `
+    return `
         Quiz Complete!\n
         ${sorted.map((place, i) => {
           return `${this.getPlaceStr(i)}: ${place.handle} - ${place.correct}\n`;
         })}
-      `
-    };
+      `;
   }
 
   private getPlaceStr(i: number) {

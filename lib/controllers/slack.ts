@@ -1,8 +1,9 @@
 import { ISlack } from '../interfaces/slack';
-import { hello, help, join } from '../utils/match';
+import { hello, help, join, start } from '../utils/match';
 import { addUser, getUser } from './user';
 import { IRequest, IResponse } from '../interfaces/express';
 import { errorResponse, response } from '../utils/voice';
+import { answerQuiz, getActiveQuiz, isQuizActive, startQuiz } from './quiz';
 
 interface IMessageList {
   regEx: RegExp;
@@ -10,12 +11,17 @@ interface IMessageList {
 }
 
 const messageList: IMessageList[] = [
-  { regEx: join, exec: addUser },
-  { regEx: hello, exec: response('confirm') }
+  { regEx: hello, exec: response('confirm') },
+  { regEx: start, exec: startQuiz }
 ];
 
 export async function message(req: IRequest<ISlack>, res: IResponse) {
   const text = req.body.event.text;
+
+  if (isQuizActive()) {
+    req.quiz = getActiveQuiz();
+    return answerQuiz(req, res);
+  }
 
   if (text.match(help)) {
     return await response('help')(req, res);
@@ -34,7 +40,9 @@ export async function message(req: IRequest<ISlack>, res: IResponse) {
 
   for (const message of messageList) {
     if (text.match(message.regEx)) {
-      await message.exec(req, res);
+      return await message.exec(req, res);
     }
   }
+
+  return errorResponse('default');
 }

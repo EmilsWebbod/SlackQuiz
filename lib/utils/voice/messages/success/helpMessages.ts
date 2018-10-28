@@ -1,8 +1,8 @@
-import { IVoiceMesage } from '../../../interfaces/voice';
-import { getRandomMessageFrom } from '../utils/getMessage';
+import { IVoiceMessage } from '../../../../interfaces/voice';
+import { getRandomMessageFrom } from '../../utils/getMessage';
 
 export interface IHelpMessages {
-  help: IVoiceMesage;
+  help: IVoiceMessage;
 }
 
 const helpMessages = {
@@ -13,7 +13,7 @@ I see you are not knowing of my extreme knowledge! Maybe this will help you!
 Commands:
 help ( super helpful right? :sweat_smile: )
 join "name" (length > 2)
-startQuiz q=number c=categoryNumber (Not implemented)
+start --amount number --category=categoryNumber (Not implemented)
     `
   ])
 };

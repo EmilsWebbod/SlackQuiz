@@ -8,8 +8,6 @@ const slack = express();
 slack.use(
   '/',
   async (req: IRequest<ISlackHandShake | ISlack>, res: IResponse) => {
-    console.log('Body', req.body);
-
     if ('challenge' in req.body) {
       return res.send(req.body.challenge);
     }

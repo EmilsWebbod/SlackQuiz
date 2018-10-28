@@ -1,9 +1,9 @@
-import userErrors, { IUserErrors } from './error/userErrors';
-import defaultErrors from './error/defaultErrors';
-import { IVoiceMesage } from '../../interfaces/voice';
+import userErrors, { IUserErrors } from './messages/error/userErrors';
+import defaultErrors from './messages/error/defaultErrors';
+import { IVoiceMessage } from '../../interfaces/voice';
 
 interface IErrors {
-  default: IVoiceMesage;
+  default: IVoiceMessage;
 }
 
 type IErrorsMessages = IErrors & IUserErrors;

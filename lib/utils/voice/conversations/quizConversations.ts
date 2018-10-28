@@ -14,10 +14,7 @@ export const quizConversations: IQuizConversations = {
 
     return [
       confirmMessages(req),
-      'Quiz will now start after 3 seconds!',
-      '3',
-      '2',
-      '1',
+      'Quiz will now start after 1 second!',
       question
     ];
   }),
@@ -27,6 +24,6 @@ export const quizConversations: IQuizConversations = {
     return [question];
   }),
   quizEnd: startConversationFrom((req) => {
-    return ['End of QUIZ', req.quiz.endQuiz()];
+    return ['End of QUIZ', req.quiz.getHighscore()];
   })
 };

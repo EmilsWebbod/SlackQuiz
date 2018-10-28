@@ -5,12 +5,15 @@ export interface ISlackHandShake {
 }
 
 export interface ISlack {
+  event_id: string;
   token: string;
   team_id: string;
   api_app_id: string;
+  type: string;
+  event_time: string;
+  authed_users: string[];
   event: {
     type: string;
-    subtype?: string;
     user: string;
     text: string;
     client_msg_id: string;
@@ -18,9 +21,6 @@ export interface ISlack {
     channel: string;
     event_ts: string;
     channel_type: string;
+    subtype?: string;
   };
-  type: string;
-  event_id: string;
-  event_time: string;
-  authed_users: string[];
 }

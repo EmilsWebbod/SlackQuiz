@@ -1,13 +1,13 @@
 import { interval } from 'rxjs';
 import { IRequest, IResponse } from '../interfaces/express';
 import { sendResponse } from './slack';
-import successMessages, { ISuccessMessages } from './voice/success';
 import errorsMessages, { IErrorsMessages } from './voice/error';
 import conversations, { IConversationList } from './voice/conversations';
+import messages, { IMessages } from './voice/messages';
 
-export function response(type: keyof ISuccessMessages) {
+export function response(type: keyof IMessages) {
   return async (req: IRequest, res: IResponse) => {
-    sendResponse(successMessages[type](req));
+    sendResponse(messages[type](req));
     return res.status(200).send();
   };
 }

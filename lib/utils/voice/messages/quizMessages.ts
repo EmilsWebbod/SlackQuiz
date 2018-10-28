@@ -1,23 +1,30 @@
 import { getRandomMessageFrom } from '../utils/getMessage';
 import { IRequest } from '../../../interfaces/express';
 import { IVoiceMessage } from '../../../interfaces/voice';
+import defaultErrors from './error/defaultErrors';
+import { getPlaceString } from '../../string';
 
 export interface IQuizMessages {
-  quizStart: IVoiceMessage;
+  top5: IVoiceMessage;
+  quizAlmostCorrect: IVoiceMessage;
 }
 
 const quizMessages: IQuizMessages = {
-  quizStart: getRandomMessageFrom((req: IRequest) => {
-    if (!req.quiz) {
-      return ['OhNo.... I seemed to have missed my quiz notes :cry:'];
+  top5: getRandomMessageFrom((req: IRequest) => {
+    const top5 = req.top5;
+    if (!top5) {
+      return [defaultErrors(req)];
     }
     return [
       `
-WOHO!! Quiz is not LIVE!!! LETS GET READY TO RUUUMMMBLEEEEEEE!
-
-`
+Leaderboard
+${top5.map((user, i) => `${getPlaceString(i)}: ${user.name} - ${user.score}\n`)}
+    `
     ];
-  })
+  }),
+  quizAlmostCorrect: (req) => {
+    return `${req.message}`;
+  }
 };
 
 export default quizMessages;

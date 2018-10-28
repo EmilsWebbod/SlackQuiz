@@ -42,7 +42,7 @@ export function quizNext(
       message: 'Quiz Ended'
     };
   }
-  return quiz.answer(handle, answer);
+  return quiz.answer(handle, '', answer);
 }
 
 export function quizEnd() {

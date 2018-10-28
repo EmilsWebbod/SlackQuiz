@@ -1,7 +1,7 @@
 import { mongoose } from '../config/db';
 import { ISlack } from '../interfaces/slack';
 import { IRequest, IResponse } from '../interfaces/express';
-import { errorResponse } from '../utils/voice';
+import { createError, errorResponse } from '../utils/voice';
 import { IUser } from '../models/User';
 
 const User = mongoose.model<IUser>('User');
@@ -31,6 +31,6 @@ export async function getUser(req: IRequest<ISlack>, res: IResponse) {
       user: req.body.event.user
     }).lean();
   } catch (e) {
-    await errorResponse()(req, res);
+    throw createError('No user');
   }
 }

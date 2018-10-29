@@ -29,6 +29,8 @@ export async function message(req: IRequest<ISlack>, res: IResponse) {
     return res.status(208).send();
   }
 
+  console.log(req.body);
+
   const text = req.body.event.text;
 
   if (text.match(help)) {
@@ -43,13 +45,13 @@ export async function message(req: IRequest<ISlack>, res: IResponse) {
   try {
     await getUser(req, res);
 
+    if (!req.user) {
+      return errorResponse('unregisteredUser')(req, res);
+    }
+
     if (isQuizActive()) {
       req.quiz = getActiveQuiz();
       return answerQuiz(req, res);
-    }
-
-    if (!req.user) {
-      return errorResponse('unregisteredUser')(req, res);
     }
 
     for (const message of messageList) {

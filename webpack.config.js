@@ -1,4 +1,3 @@
-const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 const fs = require('fs');
 const nodeModules = {};
 
@@ -18,8 +17,7 @@ module.exports = {
   },
   resolve: {
     // Add '.ts' and '.tsx' as a resolvable extension.
-    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
-    plugins: [new TsConfigPathsPlugin()]
+    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   module: {
     // All files with a '.ts' or '.tsx'
@@ -27,7 +25,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'awesome-typescript-loader'
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },

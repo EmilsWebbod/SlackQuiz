@@ -16,6 +16,7 @@ join "name" (length > 2)
 start --amount number --category=categoryNumber
   .stop (To stop an active quiz)
   .next (Get next question in quiz)
+  .help (Gives you 4 alternatives)
     `
   ])
 };

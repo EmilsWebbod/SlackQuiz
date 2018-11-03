@@ -36,7 +36,7 @@ UserSchema.statics.addUserScore = async function(user: string, score: number) {
 };
 
 UserSchema.statics.getTop5 = function() {
-  return this.find({}, ['name', 'score'], { limit: 5, sort: { score: 1 } });
+  return this.find({}, ['name', 'score'], { limit: 5, sort: { score: -1 } });
 };
 
 let User: IUserStatics;

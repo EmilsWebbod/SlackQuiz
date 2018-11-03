@@ -1,6 +1,6 @@
 import { getRandomMessageFrom } from '../../utils/getMessage';
-import { IRequest } from '../../../../interfaces/express';
-import { IVoiceMessage } from '../../../../interfaces/voice';
+import { IRequest } from '../../../../../interfaces/express';
+import { IVoiceMessage } from '../../../../../interfaces/voice';
 
 export interface IUserMessages {
   userAdded: IVoiceMessage;

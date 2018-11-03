@@ -1,21 +1,45 @@
 import { ISlack } from '../interfaces/slack';
-import { hello, help, join, leaderBoard, start } from '../utils/match';
+import {
+  all,
+  hello,
+  help,
+  join,
+  leaderBoard,
+  next,
+  quizHelp,
+  start,
+  stop
+} from '../utils/match';
 import { addUser, getUser } from './user';
 import { IRequest, IResponse } from '../interfaces/express';
-import { errorResponse, response } from '../utils/voice';
+import { errorResponse, response } from '../utils/ai/voice';
 import {
   answerQuiz,
   getActiveQuiz,
   getLeaderBoard,
   isQuizActive,
-  startQuiz
+  nextQuestion,
+  startQuiz,
+  stopQuiz
 } from './quiz';
 import Slack from '../models/Slack';
 
 interface IMessageList {
   regEx: RegExp;
-  exec: (req: IRequest<ISlack>, res: IResponse) => any;
+  exec: (req: IRequest<ISlack>, res: IResponse) => Promise<any>;
 }
+
+const noUserList: IMessageList[] = [
+  { regEx: help, exec: response('help') },
+  { regEx: join, exec: addUser }
+];
+
+const quizList: IMessageList[] = [
+  { regEx: stop, exec: stopQuiz },
+  { regEx: next, exec: nextQuestion },
+  { regEx: quizHelp, exec: response('quizHelp') },
+  { regEx: all, exec: answerQuiz }
+];
 
 const messageList: IMessageList[] = [
   { regEx: hello, exec: response('confirm') },
@@ -30,36 +54,42 @@ export async function message(req: IRequest<ISlack>, res: IResponse) {
   }
 
   const text = req.body.event.text;
+  const matchMessageWithList = matchMessage(text, req, res);
 
-  if (text.match(help)) {
-    return await response('help')(req, res);
-  }
-
-  if (text.match(join)) {
-    await addUser(req, res);
-    return await response('userAdded')(req, res);
+  if (await matchMessageWithList(noUserList)) {
+    return;
   }
 
   try {
     await getUser(req, res);
 
-    if (isQuizActive()) {
-      req.quiz = getActiveQuiz();
-      return answerQuiz(req, res);
-    }
-
     if (!req.user) {
       return errorResponse('unregisteredUser')(req, res);
     }
 
-    for (const message of messageList) {
-      if (text.match(message.regEx)) {
-        return await message.exec(req, res);
+    if (isQuizActive()) {
+      req.quiz = getActiveQuiz();
+      if (await matchMessageWithList(quizList)) {
+        return;
       }
     }
 
-    return errorResponse('default');
+    if (await matchMessageWithList(messageList)) {
+      return;
+    }
   } catch (e) {
-    return errorResponse('default');
+    return errorResponse('default')(req, res);
   }
+}
+
+function matchMessage(text: string, req: IRequest<ISlack>, res: IResponse) {
+  return async (messageList: IMessageList[]): Promise<boolean> => {
+    for (const message of messageList) {
+      if (text.match(message.regEx)) {
+        await message.exec(req, res);
+        return true;
+      }
+    }
+    return false;
+  };
 }

@@ -1,4 +1,4 @@
-import { IConversation } from '../../../interfaces/voice';
+import { IConversation } from '../../../../interfaces/voice';
 import { startConversationFrom } from '../utils/getMessage';
 import confirmMessages from '../messages/success/confirmMessages';
 

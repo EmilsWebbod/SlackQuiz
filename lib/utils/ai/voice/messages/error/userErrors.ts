@@ -1,5 +1,5 @@
 import { getRandomMessageFrom } from '../../utils/getMessage';
-import { IVoiceMessage } from '../../../../interfaces/voice';
+import { IVoiceMessage } from '../../../../../interfaces/voice';
 
 export interface IUserErrors {
   userAlreadyExist: IVoiceMessage;
@@ -11,7 +11,7 @@ const userErrors: IUserErrors = {
   userAlreadyExist: getRandomMessageFrom(() => [
     'Wait... I already have you here... You cheeky bastard',
     "I don't think you should play quizes. You can't even remember you already joined this QuizMaster",
-    "Yeah sure. Let's have to off the same user playing with 2 names. HOW ABOUT NO!"
+    "Yeah sure. Let's have two off the same user playing with 2 names. HOW ABOUT NO!"
   ]),
   unregisteredUser: getRandomMessageFrom(() => [
     'Major error. Cant find this user in my system. Will ignore!',

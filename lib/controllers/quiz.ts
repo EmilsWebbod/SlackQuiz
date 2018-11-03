@@ -1,20 +1,12 @@
-import * as qs from 'qs';
 import { IRequest, IResponse } from '../interfaces/express';
-import Quiz from '../utils/Quiz';
+import Quiz from './quiz/Quiz';
 import { ISlack } from '../interfaces/slack';
-import * as fetch from 'isomorphic-fetch';
-import { errorResponse, response, startConversation } from '../utils/voice';
-import getParams, { createParam, IParams } from '../utils/params';
+import { errorResponse, response, startConversation } from '../utils/ai/voice';
+import getParams, { params } from '../utils/params';
 import User from '../models/User';
-import { validators } from '../utils/match';
+import { fetchQuiz } from '../utils/opentdb';
 
 let quiz: Quiz = new Quiz([]);
-
-const params: IParams = {
-  amount: createParam({ param: 'amount', noMatch: '10' }),
-  category: createParam({ param: 'category' }),
-  type: createParam({ param: 'type', validate: validators.typeOfString })
-};
 
 export function isQuizActive() {
   return quiz.started;
@@ -27,13 +19,9 @@ export function getActiveQuiz() {
 export async function startQuiz(req: IRequest<ISlack>, res: IResponse) {
   try {
     const queries = getParams(params, req.body.event.text);
+    const quizResult = await fetchQuiz(queries);
+    quiz = new Quiz(quizResult);
 
-    const queryString = qs.stringify(queries);
-    const url = `https://opentdb.com/api.php?${queryString}`;
-    const quizResponse = await fetch(url);
-    const json = await quizResponse.json();
-    console.log(json.results);
-    quiz = new Quiz(json.results);
     quiz.startQuiz();
     req.quiz = quiz;
 
@@ -44,19 +32,19 @@ export async function startQuiz(req: IRequest<ISlack>, res: IResponse) {
   }
 }
 
-export function answerQuiz(req: IRequest<ISlack>, res: IResponse) {
+export async function answerQuiz(req: IRequest<ISlack>, res: IResponse) {
   try {
     const { text } = req.body.event;
     const user = req.user;
     const correct = quiz.answer(user.user, user.name, text);
+
     if (correct === 'true') {
       if (quiz.isEndOfQuiz()) {
-        quiz.endQuiz();
-        saveQuizScoreToDB(req, res).then();
-        return startConversation('quizEnd')(req, res);
+        return await endQuiz(req, res);
       }
       return startConversation('correctAnswer')(req, res);
     }
+
     if (correct !== 'false') {
       req.message = correct;
       return response('quizAlmostCorrect')(req, res);
@@ -64,6 +52,18 @@ export function answerQuiz(req: IRequest<ISlack>, res: IResponse) {
   } catch (e) {
     console.error(e);
     return errorResponse('default')(req, res);
+  }
+}
+
+export async function nextQuestion(req: IRequest<ISlack>, res: IResponse) {
+  try {
+    quiz.nextQuestion();
+    if (quiz.isEndOfQuiz()) {
+      return await endQuiz(req, res);
+    }
+    return response('quizSendQuestion')(req, res);
+  } catch (e) {
+    return errorResponse()(req, res);
   }
 }
 
@@ -82,6 +82,24 @@ async function saveQuizScoreToDB(req: IRequest<ISlack>, res: IResponse) {
   await Promise.all(
     answers.map((user) => User.addUserScore(user.handle, user.correct))
   );
+}
+
+export async function stopQuiz(req: IRequest<ISlack>, res: IResponse) {
+  try {
+    if (!quiz.started || quiz.ended) {
+      return response('quizAlreadyEnded')(req, res);
+    }
+    return await endQuiz(req, res);
+  } catch (e) {
+    return errorResponse()(req, res);
+  }
+}
+
+async function endQuiz(req: IRequest<ISlack>, res: IResponse) {
+  quiz.endQuiz();
+  saveQuizScoreToDB(req, res).then();
+  req.quiz = quiz;
+  return await startConversation('quizEnd')(req, res);
 }
 
 export default quiz;

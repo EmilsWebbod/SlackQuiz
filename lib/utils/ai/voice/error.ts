@@ -1,6 +1,6 @@
 import userErrors, { IUserErrors } from './messages/error/userErrors';
 import defaultErrors from './messages/error/defaultErrors';
-import { IVoiceMessage } from '../../interfaces/voice';
+import { IVoiceMessage } from '../../../interfaces/voice';
 
 interface IErrors {
   default: IVoiceMessage;

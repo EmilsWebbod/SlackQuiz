@@ -1,10 +1,14 @@
-import { createError } from './voice';
+import { createError } from './ai/voice';
 
 export const join = new RegExp(/^join/i);
 export const hello = new RegExp(/^hello/i);
 export const help = new RegExp(/^help/i);
 export const start = new RegExp(/^start/i);
 export const leaderBoard = new RegExp(/^leaderboard/i);
+export const stop = new RegExp(/^\.stop/i);
+export const next = new RegExp(/^\.next/i);
+export const quizHelp = new RegExp(/^\.help/i);
+export const all = new RegExp(/./);
 
 function isInt(value: any) {
   return (

@@ -1,6 +1,6 @@
 import { interval } from 'rxjs';
-import { IRequest, IResponse } from '../interfaces/express';
-import { sendResponse } from './slack';
+import { IRequest, IResponse } from '../../interfaces/express';
+import { sendResponse } from '../slack';
 import errorsMessages, { IErrorsMessages } from './voice/error';
 import conversations, { IConversationList } from './voice/conversations';
 import messages, { IMessages } from './voice/messages';
@@ -21,20 +21,24 @@ export function errorResponse(type: keyof IErrorsMessages = 'default') {
 
 export function startConversation(type: keyof IConversationList, delay = 1000) {
   return async (req: IRequest, res: IResponse) => {
-    const messages = conversations[type](req);
+    try {
+      const messages = conversations[type](req);
 
-    const conversationInterval = interval(delay).subscribe((index) => {
-      if (!messages[index]) {
-        if (conversationInterval) {
-          conversationInterval.unsubscribe();
+      const conversationInterval = interval(delay).subscribe((index) => {
+        if (!messages[index]) {
+          if (conversationInterval) {
+            conversationInterval.unsubscribe();
+          }
+          return;
         }
-        return;
-      }
-      if (messages[index] !== '') {
-        sendResponse(messages[index]);
-      }
-    });
-    return res.status(200).send();
+        if (messages[index] !== '') {
+          sendResponse(messages[index]);
+        }
+      });
+      return res.status(200).send();
+    } catch (e) {
+      throw e;
+    }
   };
 }
 

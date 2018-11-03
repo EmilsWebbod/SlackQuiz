@@ -1,21 +1,11 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 // import bootstrapDatabase from './config/db';
-import { ApolloServer } from 'apollo-server-express';
-import schema from './schema/index';
 import bootstrapDatabase from './config/db';
 import slack from './routes/slack';
 
 // Bootstrap mongoDB
 bootstrapDatabase();
-
-const server = new ApolloServer({
-  schema,
-  context: (req: Request, res: Response) => ({
-    req,
-    res
-  })
-});
 
 const app = express();
 const env = process.env.NODE_ENV || 'development';
@@ -26,7 +16,6 @@ const port =
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-server.applyMiddleware({ app, path: '/graphql' });
 
 app.get('/', function(req: any, res: any) {
   res.send('QuizMaster 1337 on duty!');

@@ -19,7 +19,6 @@ slack.use(
         error: 'Wrong slack object'
       });
     }
-
     // @ts-ignore
     const request: IRequest<ISlack> = req;
 

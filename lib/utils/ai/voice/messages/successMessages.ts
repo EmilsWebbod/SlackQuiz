@@ -1,5 +1,5 @@
 import confirmMessages from './success/confirmMessages';
-import { IVoiceMessage } from '../../../interfaces/voice';
+import { IVoiceMessage } from '../../../../interfaces/voice';
 
 export interface ISuccessMessages {
   confirm: IVoiceMessage;

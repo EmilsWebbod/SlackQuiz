@@ -1,12 +1,16 @@
-import { getPlaceString } from './string';
+import { getPlaceString } from './text';
+import { getRandomInt } from '../../utils/math';
 
 type IQuizTypes = 'multiple' | 'boolean';
+type IQuizDifficulties = 'easy' | 'medium' | 'hard';
 
 export interface IQuizQuestion {
+  category: string;
+  type: IQuizTypes;
+  difficulty: IQuizDifficulties;
   question: string;
   correct_answer: string;
-  answers: string;
-  type: IQuizTypes;
+  incorrect_answers: string[];
 }
 
 export default class Quiz {
@@ -16,6 +20,8 @@ export default class Quiz {
     correct: number;
   }> = [];
   private _index = 0;
+  private multipleChoice: string[] = [];
+  private multipleAnswer = -1;
 
   public started = false;
   public ended = false;
@@ -24,6 +30,7 @@ export default class Quiz {
 
   public startQuiz() {
     this.started = true;
+    this._answers = [];
   }
 
   public getQuestion() {
@@ -43,11 +50,22 @@ export default class Quiz {
       this.ended = true;
       return;
     }
+    if (
+      this.multipleChoice.length > 0 &&
+      this.multipleAnswer + 1 === Number(answer)
+    ) {
+      this.addCorrectAnswerToList(handle, name);
+      this.nextQuestion();
+      return 'true';
+    }
+
     const correctSplit = this._questions[this._index].correct_answer.split(' ');
     const matches = new Array(correctSplit.length).fill(false);
     const answerSplit = answer.split(' ');
     for (const answerWord of answerSplit) {
-      const index = correctSplit.findIndex((x) => !!answerWord.match(x));
+      const index = correctSplit.findIndex(
+        (x) => !!answerWord.match(new RegExp(x, 'i'))
+      );
       if (index > -1) {
         matches[index] = true;
       }
@@ -55,7 +73,7 @@ export default class Quiz {
 
     if (matches.every((boolean) => boolean)) {
       this.addCorrectAnswerToList(handle, name);
-      ++this._index;
+      this.nextQuestion();
       return 'true';
     }
 
@@ -74,6 +92,12 @@ export default class Quiz {
     } else {
       return 'false';
     }
+  }
+
+  public nextQuestion() {
+    this.multipleChoice = [];
+    this.multipleAnswer = -1;
+    ++this._index;
   }
 
   public isEndOfQuiz() {
@@ -100,10 +124,26 @@ export default class Quiz {
       `;
   }
 
+  public getMultipleChoice(
+    question: IQuizQuestion = this._questions[this._index]
+  ) {
+    this.multipleChoice = question.incorrect_answers;
+    this.multipleAnswer = getRandomInt(0, this.multipleChoice.length);
+
+    this.multipleChoice.splice(this.multipleAnswer, 0, question.correct_answer);
+
+    return `${this.multipleChoice.map((answer, i) => `${i + 1}: ${answer}\n`)}`;
+  }
+
   private getQuestionString() {
     const question = this._questions[this._index];
+
     switch (question.type) {
       case 'multiple':
+        const whichOfThe = question.question.match(/(\bwhich\b.*of\b.*the)/i);
+        if (whichOfThe) {
+          return `${question.question}\n${this.getMultipleChoice(question)}`;
+        }
         return question.question;
       case 'boolean':
         return `${question.question}\nTrue or False?`;

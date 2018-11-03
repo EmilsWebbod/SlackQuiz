@@ -21,3 +21,11 @@ export default function getParams(parameters: IParams, text: string) {
   }
   return queries;
 }
+
+const params: IParams = {
+  amount: createParam({ param: 'amount', noMatch: '10' }),
+  category: createParam({ param: 'category' }),
+  type: createParam({ param: 'type', validate: validators.typeOfString })
+};
+
+export { params };

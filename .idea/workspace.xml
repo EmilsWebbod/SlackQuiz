@@ -2,23 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea82182c-a5ab-4268-871e-423963e05e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/models/Slack.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/string.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/voice/messages.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/quiz.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/quiz.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/slack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/slack.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/interfaces/express.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/interfaces/express.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/interfaces/slack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/interfaces/slack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/opentdb.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/Quiz.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/Quiz.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/slack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/slack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/schema/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/schema/resolvers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/schema/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/Quiz.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/quiz/Quiz.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/utils/match.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/match.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/quizController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/quizController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/voice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/voice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/voice/conversations/quizConversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/voice/conversations/quizConversations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/quizMessages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/voice/messages/quizMessages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/voice/success.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/voice/messages/successMessages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/math.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/math.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/mockData.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/params.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/quizController.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/string.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/quiz/text.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/conversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/conversations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/conversations/quizConversations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/conversations/quizConversations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/error/defaultErrors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/error/defaultErrors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/error/userErrors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/error/userErrors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/quizMessages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/quizMessages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/success/confirmMessages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/success/confirmMessages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/success/helpMessages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/success/helpMessages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/success/userMessages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/success/userMessages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/messages/successMessages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/messages/successMessages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/voice/utils/getMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ai/voice/utils/getMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -77,48 +100,59 @@
     <session id="-1857644031">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="4" />
+          <entry key="TypeScriptServerServiceImpl" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="env" value="4" />
-          <entry key="example" value="1" />
-          <entry key="json" value="1" />
-          <entry key="ts" value="140" />
+          <entry key="env" value="6" />
+          <entry key="example" value="2" />
+          <entry key="js" value="3" />
+          <entry key="json" value="14" />
+          <entry key="ts" value="222" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="1" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="JSON" value="9" />
+          <entry key="JavaScript" value="3" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="Scratch" value="1" />
-          <entry key="TypeScript" value="140" />
+          <entry key="TypeScript" value="222" />
+          <entry key="tsconfig" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="env" value="143" />
-          <entry key="ts" value="19561" />
+          <entry key="env" value="152" />
+          <entry key="example" value="4" />
+          <entry key="js" value="119" />
+          <entry key="json" value="431" />
+          <entry key="ts" value="23079" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="143" />
+          <entry key="JSON" value="141" />
+          <entry key="JavaScript" value="119" />
+          <entry key="PLAIN_TEXT" value="156" />
           <entry key="Scratch" value="3" />
-          <entry key="TypeScript" value="19561" />
+          <entry key="TypeScript" value="23079" />
+          <entry key="tsconfig" value="290" />
         </counts>
       </usages-collector>
     </session>
@@ -130,29 +164,32 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/controllers/slack.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/models/Slack.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+                <state>
+                  <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
                   <folding>
-                    <element signature="e#0#40#0" expanded="true" />
+                    <element signature="e#0#45#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/interfaces/express.ts">
+            <entry file="file://$PROJECT_DIR$/lib/utils/match.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+                  <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/controllers/quiz.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="481">
+                  <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#0#60#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -162,30 +199,87 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lib/utils/Quiz.ts">
+            <entry file="file://$PROJECT_DIR$/lib/controllers/quiz/Quiz.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="431">
-                  <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+                <state relative-caret-position="532">
+                  <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/controllers/quiz.ts">
+            <entry file="file://$PROJECT_DIR$/lib/models/User.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+                <state relative-caret-position="646">
+                  <caret line="38" column="73" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/quizMessages.ts">
+            <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/conversations/quizConversations.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+                <state relative-caret-position="153">
+                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                  <folding>
+                    <element signature="e#0#61#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/conversations.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#0#94#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/quizMessages.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
                   <folding>
                     <element signature="e#0#59#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/error/userErrors.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#62#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/success/confirmMessages.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="22" selection-start-column="22" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/success/helpMessages.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+                  <folding>
+                    <element signature="e#0#64#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -207,6 +301,10 @@
       <find>body</find>
       <find>res:</find>
       <find>POST</find>
+      <find>utils/match</find>
+      <find>'utils</find>
+      <find>Okey dokey</find>
+      <find>Let'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -215,41 +313,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_16.txt" />
-        <option value="$PROJECT_DIR$/lib/schema/resolvers.ts" />
-        <option value="$PROJECT_DIR$/lib/schema/types.ts" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_17.txt" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
-        <option value="$PROJECT_DIR$/lib/utils/mockData.ts" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/lib/config/db.ts" />
-        <option value="$PROJECT_DIR$/lib/server.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/constants.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/slack.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/math.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/voice/successMessages.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/voice/success/confirm.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/voice/success/userSuccess.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/voice/success/userMessages.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/voice/error.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/error/userErrors.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/success/confirmMessages.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/error/defaultErrors.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/success.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/success/helpMessages.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/params.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/success/quizMessages.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/conversation.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/conversations/quiz.ts" />
         <option value="$PROJECT_DIR$/lib/interfaces/voice.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/utils/getMessage.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/conversations.ts" />
-        <option value="$PROJECT_DIR$/lib/routes/slack.ts" />
         <option value="$PROJECT_DIR$/lib/models/Quiz.ts" />
         <option value="$PROJECT_DIR$/lib/utils/quizController.ts" />
-        <option value="$PROJECT_DIR$/lib/controllers/user.ts" />
-        <option value="$PROJECT_DIR$/lib/models/User.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/messages/success/quizMessages.ts" />
         <option value="$PROJECT_DIR$/lib/utils/string.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/messages/success.ts" />
@@ -257,14 +333,37 @@
         <option value="$PROJECT_DIR$/lib/utils/voice.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/messages.ts" />
         <option value="$PROJECT_DIR$/lib/interfaces/slack.ts" />
-        <option value="$PROJECT_DIR$/lib/utils/match.ts" />
-        <option value="$PROJECT_DIR$/lib/models/Slack.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/conversations/quizConversations.ts" />
         <option value="$PROJECT_DIR$/lib/interfaces/express.ts" />
-        <option value="$PROJECT_DIR$/lib/controllers/quiz.ts" />
         <option value="$PROJECT_DIR$/lib/utils/voice/messages/quizMessages.ts" />
         <option value="$PROJECT_DIR$/lib/utils/Quiz.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/mockData.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/slack.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/opentdb.ts" />
+        <option value="$PROJECT_DIR$/nodemon.json" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice/messages/success/confirmMessages.ts" />
+        <option value="$PROJECT_DIR$/lib/models/Slack.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/params.ts" />
+        <option value="$PROJECT_DIR$/.env.example" />
+        <option value="$PROJECT_DIR$/lib/utils/math.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/lib/server.ts" />
+        <option value="$PROJECT_DIR$/lib/routes/slack.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice/utils/getMessage.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice.ts" />
+        <option value="$PROJECT_DIR$/lib/controllers/user.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice/messages/error/userErrors.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice/conversations/quizConversations.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice/messages/success/helpMessages.ts" />
+        <option value="$PROJECT_DIR$/lib/models/User.ts" />
+        <option value="$PROJECT_DIR$/lib/controllers/quiz.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/ai/voice/messages/quizMessages.ts" />
+        <option value="$PROJECT_DIR$/lib/utils/match.ts" />
         <option value="$PROJECT_DIR$/lib/controllers/slack.ts" />
+        <option value="$PROJECT_DIR$/lib/controllers/quiz/Quiz.ts" />
       </list>
     </option>
   </component>
@@ -285,10 +384,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="133" />
+    <option name="x" value="80" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="1848" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -323,7 +422,8 @@
               <item name="SlackQuiz" type="b2602c69:ProjectViewProjectNode" />
               <item name="SlackQuiz" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="quiz" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SlackQuiz" type="b2602c69:ProjectViewProjectNode" />
@@ -348,6 +448,14 @@
               <item name="SlackQuiz" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SlackQuiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SlackQuiz" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
               <item name="voice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -355,6 +463,7 @@
               <item name="SlackQuiz" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
               <item name="voice" type="462c0819:PsiDirectoryNode" />
               <item name="conversations" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -363,8 +472,19 @@
               <item name="SlackQuiz" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
               <item name="voice" type="462c0819:PsiDirectoryNode" />
               <item name="messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SlackQuiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SlackQuiz" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="voice" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
+              <item name="success" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SlackQuiz" type="b2602c69:ProjectViewProjectNode" />
@@ -381,7 +501,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kanva-game-engine" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="C:\Ludens\quiz\slack-quiz-api-graphql\node_modules\tslint" />
@@ -395,8 +515,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\EmilsWebbod\SlackQuiz\lib\utils" />
+      <recent name="C:\EmilsWebbod\SlackQuiz\lib\controllers" />
+      <recent name="C:\EmilsWebbod\SlackQuiz\lib\utils\quiz" />
+      <recent name="C:\EmilsWebbod\SlackQuiz\lib\utils\ai" />
       <recent name="C:\EmilsWebbod\SlackQuiz\lib\utils\voice" />
-      <recent name="C:\EmilsWebbod\SlackQuiz\lib\utils\voice\messages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -425,12 +548,14 @@
       <workItem from="1540584929023" duration="15824000" />
       <workItem from="1540672565511" duration="10448000" />
       <workItem from="1540730799126" duration="554000" />
-      <workItem from="1540750633977" duration="9445000" />
+      <workItem from="1540750633977" duration="9591000" />
+      <workItem from="1541016934613" duration="155000" />
+      <workItem from="1541190660017" duration="14189000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47423000" />
+    <option name="totallyTimeSpent" value="61913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="-8" width="1848" height="1096" extended-state="6" />
@@ -438,10 +563,10 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.19071588" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19071588" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32952183" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -460,37 +585,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="additionalRoots">
-      <list>
-        <option value="$PROJECT_DIR$/node_modules/@types" />
-      </list>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_17.txt" />
-    <entry file="file://$PROJECT_DIR$/lib/schema/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/home.test.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/express-serve-static-core/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -526,38 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/mockData.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/request/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28">
           <caret line="116" column="14" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -575,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/error/userErrors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/config/db.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -589,213 +653,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/server.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/utils/voice/conversation.ts" />
-    <entry file="file://$PROJECT_DIR$/lib/utils/slack.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/interfaces/voice.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/Quiz.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/success/helpMessages.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/quizController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/success/quizMessages.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/error/defaultErrors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/error.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/successMessages.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/conversations.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/success/userMessages.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/params.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/Quiz.ts" />
+    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/success/quizMessages.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@types/mongoose/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1396">
           <caret line="607" column="4" selection-start-line="607" selection-start-column="4" selection-end-line="607" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/match.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes/slack.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/string.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/success/confirmMessages.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/math.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/utils/getMessage.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/conversations/quizConversations.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,51 +670,330 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/quizController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/mockData.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/interfaces/express.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="17">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/quiz/text.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/Slack.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="17">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/slack.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/params.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/error.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/successMessages.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/success/userMessages.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/error/defaultErrors.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/params.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/math.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/opentdb.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodemon.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/server.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#127#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes/slack.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/utils/getMessage.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/interfaces/voice.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/error/userErrors.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/success/confirmMessages.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/quiz.ts">
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/success/helpMessages.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        <state relative-caret-position="289">
+          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/voice/messages/quizMessages.ts">
+    <entry file="file://$PROJECT_DIR$/lib/controllers/quiz.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="481">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/match.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/messages/quizMessages.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/Quiz.ts">
+    <entry file="file://$PROJECT_DIR$/lib/controllers/slack.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+        <state>
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/slack.ts">
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/conversations.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="136">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/ai/voice/conversations/quizConversations.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/User.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="73" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/quiz/Quiz.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
         </state>
       </provider>
     </entry>
